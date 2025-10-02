@@ -1,35 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meramasa - Filipino Artisan Bakery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style2.css" />
+  </head>
 
-<body>
+  <body>
+    <!-- Header + Navbar -->
+    <div class="header-container" id="headerContainer">
+      <div class="floating-header">
+        All orders will be ready for pickup on our next business day between
+        9:00 AM and 5:00 PM
+      </div>
 
-    <header>
-        <a href="index.html">
-            <img src="img/mera.jpg" alt="Meramasa Logo" style="max-width: 350px; margin-bottom: 1rem;">
-        </a>
-        <!-- <h1>Meramasa</h1>
-    <p>Filipino Artisan Bakery – Handmade with Heart</p> -->
+      <!-- <div class="navbar">
+        <div class="logo">
+          <a href="index2.html">
+            <img src="img/mera1.png" alt="Meramasa Logo" />
+          </a>
+        </div>
+        <div class="nav-center">
+          <ul class="nav-links">
+            <li><a href="index3.html">Home</a></li>
+            <li><a href="img/menu.jpg" target="_blank">Menu</a></li>
+            <li><a href="order.html">Orders</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div> -->
+    </div>
 
-    </header>
+    <!-- Page content -->
+    <div class="content">
+      <script
+        type="text/javascript"
+        src="https://pci.jotform.com/jsform/252550744994164"
+      ></script>
+    </div>
+    <!-- Footer -->
+    <footer>&copy; 2025 Meramasa Bakery. All rights reserved.</footer>
 
-    <script type="text/javascript" src="https://pci.jotform.com/jsform/252550744994164"></script>
+    <!-- Scroll hide/show script -->
+    <script>
+      let lastScrollY = window.scrollY;
+      const headerContainer = document.getElementById("headerContainer");
 
-
-
-
-    <footer>
-        &copy; 2025 Meramasa Bakery. All rights reserved.
-    </footer>
-
-</body>
-
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > lastScrollY) {
+          headerContainer.classList.add("hidden");
+        } else {
+          headerContainer.classList.remove("hidden");
+        }
+        lastScrollY = window.scrollY;
+      });
+    </script>
+  </body>
 </html>

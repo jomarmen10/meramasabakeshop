@@ -1,0 +1,247 @@
+:root {
+  --main-bg: #fff8f0;
+  --accent: #b3744c;
+  --text: #333;
+  --font-header: "Playfair Display", serif;
+  --font-body: "Open Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--main-bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Header container for floating header + navbar */
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Floating announcement bar */
+.floating-header {
+  width: 100%;
+  background: #543b1f;
+  color: #fcecd5;
+  text-align: center;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar styles */
+.navbar {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  color: #fcecd5;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+}
+
+/* Centered nav items */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #fcecd5;
+  text-decoration: none;
+  font-size: 26px;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #543b1f;
+}
+
+/* Logo image left */
+.logo img {
+  height: 130px; /* adjust as needed */
+  width: auto;
+  display: block;
+}
+
+footer {
+  background-color: #543b1f;
+  color: #fcecd5;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* section */
+section {
+  padding: 3rem 1.5rem;
+  max-width: 960px;
+  margin: auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.gallery,
+.contact {
+  margin-bottom: 2rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+/* Hide on scroll */
+.hidden {
+  transform: translateY(-100%);
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    gap: 15px;
+  }
+  .logo img {
+    height: 60px;
+  }
+}
+
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 100%; /* adjust as needed */
+  overflow: hidden;
+}
+
+.hero-banner img {
+  width: 100vw;
+  height: 100vw;
+  object-fit: cover; /* ensures image fills the div */
+}
+
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Gradient from top/left black to transparent */
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0) 50%
+    ),
+    /* top fade */
+      linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%); /* left fade */
+  pointer-events: none; /* so it doesn't block clicks */
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo img {
+    max-width: 120px;
+  }
+
+  .contact {
+    padding: 20px 10px;
+  }
+
+  .contact h2 {
+    font-size: 1.5rem;
+  }
+
+  .floating-header {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    font-size: 0.9rem;
+  }
+
+  .hero-banner img {
+    height: auto;
+    padding-top: 55px;
+  }
+}
+
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* make hero fill the whole screen height */
+  overflow: hidden;
+}
+
+.hero-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* make sure image covers full area */
+  display: block;
+}
+
+.hero-btn {
+  position: absolute;
+  top: 50%; /* center vertically */
+  left: 50%; /* center horizontally */
+  transform: translate(-50%, -50%);
+  background: #543b1f;
+  color: #fcecd5;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-size: 20px;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: #fcecd5;
+  color: #543b1f;
+}
+
+/* ✅ Responsive adjustment for mobile */
+@media (max-width: 600px) {
+  .hero-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
